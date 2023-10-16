@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: fantasy, cursive; 
+    box-sizing: border-box;
+
+}
+
+body{
+    background: blue
+}
+
+.app{
+    background: #fff;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10xp;
+    padding: 30px;
+
+}
+
+.app h1{
+    font-weight: 25px;
+    color: black;
+    font-weight:500;
+    border-bottom: 1px solid grey;
+    padding-bottom: 30px;
+
+}
+.quiz{
+    padding: 20px 0;
+
+}
+.btn{
+   font-size: 16px;
+   color:black;
+   font-weight: 500;
+   width: 100%;
+   border: 1px solid grey;
+   padding: 10px;
+   margin: 10px 0;
+   text-align: center; 
+   border: 10px;
+   cursor: pointer;
+   transition: all 0.4s;
+
+}
+.btn:hover{
+    background-color: #fff;
+    color: grey;
+    
+}
+#next-btn{
+    background: grey;
+    color: white;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+
+}
