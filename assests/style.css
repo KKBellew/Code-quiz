@@ -7,17 +7,18 @@
 }
 
 body{
-    background: blue
+    background: blue;
 }
 
 .app{
     background: #fff;
     width: 90%;
     max-width: 600px;
+    margin: 100px auto 0;
     border-radius: 10xp;
     padding: 30px;
 
-}
+} 
 
 .app h1{
     font-weight: 25px;
@@ -45,11 +46,16 @@ body{
    transition: all 0.4s;
 
 }
-.btn:hover{
+.btn:hover:not([disabled]){
     background-color: #fff;
     color: grey;
+
     
 }
+.btn:disabled{
+    cursor: no-drop;
+}
+
 #next-btn{
     background: grey;
     color: white;
@@ -61,5 +67,10 @@ body{
     border-radius: 4px;
     cursor: pointer;
     display: none;
-
+}
+.correct{
+    background-color: aqua;
+}
+.incorrect{
+    background-color: red;
 }
