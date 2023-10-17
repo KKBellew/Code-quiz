@@ -5,11 +5,6 @@
     box-sizing: border-box;
 
 }
-
-body{
-    background: blue;
-}
-
 .app{
     background: #fff;
     width: 90%;
@@ -19,9 +14,8 @@ body{
     padding: 30px;
 
 } 
-
 .app h1{
-    font-weight: 25px;
+    font-size: 20px;
     color: black;
     font-weight:500;
     border-bottom: 1px solid grey;
@@ -32,9 +26,15 @@ body{
     padding: 20px 0;
 
 }
+.quiz h2{
+    font-size: 16px;
+    color:white;
+    font-weight: 600;
+
+}
 .btn{
    font-size: 16px;
-   color:black;
+   color:rgb(227, 221, 221);
    font-weight: 500;
    width: 100%;
    border: 1px solid grey;
@@ -44,16 +44,10 @@ body{
    border: 10px;
    cursor: pointer;
    transition: all 0.4s;
-
 }
-.btn:hover:not([disabled]){
-    background-color: #fff;
-    color: grey;
-
-    
-}
-.btn:disabled{
-    cursor: no-drop;
+.btn:hover {
+    background-color: #b31616;
+    color: rgb(10, 3, 3); 
 }
 
 #next-btn{

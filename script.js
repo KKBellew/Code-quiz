@@ -6,7 +6,7 @@ const questions= [
             { text: "Boolean", correct: false},
             { text: "Strings", correct: false},
             { text: "Numbers", correct: false},
-    ]
+         ]
     },
     {   question:"The condition in an if/else statement is enclosed within _____.",
         answers:[ 
@@ -45,9 +45,9 @@ const questions= [
 
     },
 ];
-const questoinElement = docement.getElementById("questoin");
-const answerButtons = docement.getElementById("answer-button");
-const nextButton = docement.getElementById("next-btn");
+const questionElement = document.getElementById("questions");
+const answers = document.getElementById("answers");
+const nextButton = document.getElementById("next-btn");
  
 let currentQuestionIndex = 0;
 let score = 0;
@@ -55,19 +55,18 @@ let score = 0;
 function startQuiz(){
     currentQuestionIndex = 0;
     score = 0;
-    nextButton.innerHtML = "Next"
-    showQuestion();
+    nextButton.innerhtml = ("Next");
+    
 }
-
 function showQuestion(){
     resetState();
-    let currentQuestion = questions[currentQuestionIndex]
+    let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex = + 1;
-    questoinElement.innerHTML = questionNo + ". " + currentQuestion.question;
+    questionElement.innerhtml = questionNo + ". " + currentQuestion.question;
 
-currentQuestion.answers.forEach(answer => {
+    currentQuestion.answers.forEach(answer => {
     const button = document.createElement("button");
-    button.innerHTML = answer.text;
+    button.innerhtml = answer.text;
     button.classList.add("btn");
     answerButton.appendChild(button);
     if(answer.correct){
@@ -76,13 +75,23 @@ currentQuestion.answers.forEach(answer => {
     button.addEventListener(click, selectAnswer);
 });
 }
+//timer here
+var timeEl = document.querySelector(".time");
+var secondsLeft = 60;
 
-function resetState(){
-    nextButton.style.display = "none";
-    while(answerButtons.firstChild){
-        answerButtons.removeChild(answerButtons.firstChild);
-    }
+function setTime() {
+  
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft;
+    }, 1000);
 }
+//reset questions
+function resetState(){
+    nextButton.style.display = ("none");
+    
+}
+//ansers correct/incorect 
 function selectAnswer(e){
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dadaset.correct === "true";
@@ -98,17 +107,15 @@ function selectAnswer(e){
         if(button.dataset.correct ==="true"){
             button.classList.add("correct");
         }
-        button.disabled = true;
     })
     nextButton.style.display = "block";
 }
 function showScore(){
     resetState();
-    questoinElement.innerHTML = "You scored ${score} out of ${questions.length}."; 
-    nextButton.innerHTML = "Play again";
-    nextButton.style.display = "block"
+    questionElement.innerhtml = "You scored ${score} out of ${questions.length}."; 
+    nextButton.innerhyml = "Play again";
+    nextButton.style.display = "block";
 }
-
 function handleNextButton(){
     currentQuestionIndex++;
     if(currentQuestionIndex <question.length){
@@ -117,8 +124,6 @@ function handleNextButton(){
         showScore();
     }
 }
-
-
 nextButton.addEventListener("click", ()=>{
     if(currentQuestionIndex < questions.length){
         handleNextButton();
@@ -127,4 +132,4 @@ nextButton.addEventListener("click", ()=>{
     }
 });
 
-startQuiz( )
+startQuiz()
